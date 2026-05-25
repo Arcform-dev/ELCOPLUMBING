@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Star, Phone, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import QuoteForm from "../QuoteForm";
 
@@ -9,48 +8,48 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-brand-navy pt-32 pb-20 md:pt-40 lg:pt-32"
+      className="relative flex min-h-screen w-full items-center overflow-hidden pt-32 pb-20 md:pt-40 lg:pt-32"
+      style={{
+        backgroundImage: "url(/images/van.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#1B2A4A",
+      }}
     >
-      {/* Background image — van fully visible with a soft gray treatment */}
-      <div className="absolute inset-0 -z-10 overflow-hidden bg-brand-navy">
-        {/* The van photo. Centered, slight desaturation only. */}
-        <Image
-          src="/images/van.png"
-          alt="ELCO Plumbing service van parked in a Marietta driveway"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-          style={{
-            filter: "grayscale(25%) brightness(0.95) contrast(1.05)",
-          }}
-        />
+      {/* Plain <img> preload so the file is requested even if background-image fails */}
+      <img
+        src="/images/van.png"
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        style={{ filter: "grayscale(20%) brightness(0.95) contrast(1.05)" }}
+      />
 
-        {/* Left-side text-area darken only. Right half stays photographic. */}
-        <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-brand-navy via-brand-navy/75 to-transparent" />
+      {/* Left-side text-area darken only. Right half stays photographic. */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-brand-navy via-brand-navy/70 to-transparent" />
 
-        {/* Soft top fade for the nav. */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-navy/70 to-transparent" />
+      {/* Soft top fade for the nav. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-navy/65 to-transparent" />
 
-        {/* Soft bottom fade into the ticker. */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-navy/70 to-transparent" />
+      {/* Soft bottom fade into the ticker. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-navy/70 to-transparent" />
 
-        {/* Single brand color flare for atmosphere. */}
-        <div className="absolute -bottom-32 right-0 h-[420px] w-[420px] rounded-full bg-brand-red/20 blur-[160px]" />
-        <div className="absolute -top-24 left-0 h-[360px] w-[360px] rounded-full bg-brand-gold/15 blur-[140px]" />
+      {/* Brand-color atmospheric flares. */}
+      <div className="pointer-events-none absolute -bottom-32 right-0 h-[420px] w-[420px] rounded-full bg-brand-red/20 blur-[160px]" />
+      <div className="pointer-events-none absolute -top-24 left-0 h-[360px] w-[360px] rounded-full bg-brand-gold/15 blur-[140px]" />
 
-        {/* Subtle film grain. */}
-        <div
-          className="absolute inset-0 opacity-[0.10] mix-blend-overlay pointer-events-none"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")",
-          }}
-        />
-      </div>
+      {/* Subtle film grain. */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")",
+        }}
+      />
 
       {/* Floating drips */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[12, 28, 47, 68, 84].map((left, i) => (
           <span
             key={left}
