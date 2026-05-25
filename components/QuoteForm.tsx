@@ -74,7 +74,7 @@ export default function QuoteForm({ variant = "hero" }: { variant?: Variant }) {
       onSubmit={onSubmit}
       className={`relative grid gap-4 ${
         isHero
-          ? "rounded-[28px] bg-white p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] md:p-8"
+          ? "rounded-[28px] bg-white/80 p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/40 backdrop-blur-2xl md:p-8"
           : "rounded-[32px] bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-md md:p-10"
       }`}
     >
