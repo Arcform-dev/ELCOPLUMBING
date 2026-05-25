@@ -187,9 +187,9 @@ export default function Hero() {
 
           {/* Right: floating quote form */}
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ y: 24 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             {/* Ambient glow */}

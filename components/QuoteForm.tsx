@@ -74,7 +74,7 @@ export default function QuoteForm({ variant = "hero" }: { variant?: Variant }) {
       onSubmit={onSubmit}
       className={`relative grid gap-4 ${
         isHero
-          ? "rounded-[28px] bg-white/80 p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/40 backdrop-blur-2xl md:p-8"
+          ? "rounded-[28px] bg-white/25 p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/30 backdrop-blur-[28px] backdrop-saturate-150 md:p-8"
           : "rounded-[32px] bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-md md:p-10"
       }`}
     >
@@ -95,7 +95,7 @@ export default function QuoteForm({ variant = "hero" }: { variant?: Variant }) {
         </h3>
         <p
           className={`mt-1 text-sm ${
-            isHero ? "text-brand-navy/60" : "text-white/60"
+            isHero ? "text-brand-navy/80" : "text-white/60"
           }`}
         >
           Same-day callbacks. No fees, no pressure.
@@ -174,8 +174,8 @@ export default function QuoteForm({ variant = "hero" }: { variant?: Variant }) {
       </button>
 
       <p
-        className={`text-center text-[11px] leading-relaxed ${
-          isHero ? "text-brand-navy/50" : "text-white/50"
+        className={`text-center text-[11px] font-medium leading-relaxed ${
+          isHero ? "text-brand-navy/75" : "text-white/50"
         }`}
       >
         By submitting you agree to be contacted by ELCO Plumbing. We never sell
@@ -197,8 +197,8 @@ function Field({
   return (
     <label className="group flex flex-col gap-1.5">
       <span
-        className={`text-[11px] font-semibold uppercase tracking-wider ${
-          isHero ? "text-brand-navy/70" : "text-white/70"
+        className={`text-[11px] font-bold uppercase tracking-wider ${
+          isHero ? "text-brand-navy/85" : "text-white/70"
         }`}
       >
         {label}
@@ -210,7 +210,7 @@ function Field({
         {...props}
         className={`w-full rounded-xl border px-4 py-3 text-sm font-medium transition-colors ${
           isHero
-            ? "border-brand-navy/15 bg-brand-navy/[0.02] text-brand-navy placeholder:text-brand-navy/30 focus:border-brand-red focus:bg-white"
+            ? "border-brand-navy/30 bg-white/35 text-brand-navy placeholder:text-brand-navy/50 focus:border-brand-red focus:bg-white/80"
             : "border-white/15 bg-white/5 text-white placeholder:text-white/30 focus:border-brand-gold focus:bg-white/10"
         }`}
       />
@@ -232,8 +232,8 @@ function SelectField({
   return (
     <label className="group flex flex-col gap-1.5 md:col-span-1">
       <span
-        className={`text-[11px] font-semibold uppercase tracking-wider ${
-          isHero ? "text-brand-navy/70" : "text-white/70"
+        className={`text-[11px] font-bold uppercase tracking-wider ${
+          isHero ? "text-brand-navy/85" : "text-white/70"
         }`}
       >
         {label}
@@ -246,7 +246,7 @@ function SelectField({
         defaultValue=""
         className={`w-full rounded-xl border px-4 py-3 text-sm font-medium transition-colors ${
           isHero
-            ? "border-brand-navy/15 bg-brand-navy/[0.02] text-brand-navy focus:border-brand-red focus:bg-white"
+            ? "border-brand-navy/30 bg-white/35 text-brand-navy focus:border-brand-red focus:bg-white/80"
             : "border-white/15 bg-white/5 text-white focus:border-brand-gold focus:bg-white/10"
         }`}
       >
