@@ -11,54 +11,42 @@ export default function Hero() {
       id="top"
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-brand-navy pt-32 pb-20 md:pt-40 lg:pt-32"
     >
-      {/* Background image — van visible, gray mask + dark gradient for text legibility */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* Base photo — slightly desaturated, anchored right so the van shows behind the form */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/van.png"
-            alt="ELCO Plumbing service van parked in a Marietta driveway"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[70%_center]"
-            style={{
-              filter: "grayscale(35%) contrast(1.08) brightness(0.9) saturate(0.85)",
-            }}
-          />
-        </div>
+      {/* Background image — van fully visible with a soft gray treatment */}
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-brand-navy">
+        {/* The van photo. Centered, slight desaturation only. */}
+        <Image
+          src="/images/van.png"
+          alt="ELCO Plumbing service van parked in a Marietta driveway"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+          style={{
+            filter: "grayscale(25%) brightness(0.95) contrast(1.05)",
+          }}
+        />
 
-        {/* Subtle gray tint to unify the colors with the brand palette */}
-        <div className="absolute inset-0 bg-[#1B2A4A] mix-blend-multiply opacity-25" />
+        {/* Left-side text-area darken only. Right half stays photographic. */}
+        <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-brand-navy via-brand-navy/75 to-transparent" />
 
-        {/* Strong left-side legibility gradient — fades out around the form area */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 from-0% via-30% to-transparent to-70%" />
+        {/* Soft top fade for the nav. */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-navy/70 to-transparent" />
 
-        {/* Top edge gradient — keeps the nav readable without darkening the whole image */}
-        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-brand-navy/85 to-transparent" />
+        {/* Soft bottom fade into the ticker. */}
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-navy/70 to-transparent" />
 
-        {/* Bottom edge gradient — feeds into the ticker bar below */}
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-navy/85 to-transparent" />
+        {/* Single brand color flare for atmosphere. */}
+        <div className="absolute -bottom-32 right-0 h-[420px] w-[420px] rounded-full bg-brand-red/20 blur-[160px]" />
+        <div className="absolute -top-24 left-0 h-[360px] w-[360px] rounded-full bg-brand-gold/15 blur-[140px]" />
 
-        {/* Brand-color light leaks — placed away from the van for atmosphere */}
-        <div className="absolute -top-32 -left-32 h-[420px] w-[420px] rounded-full bg-brand-gold/15 blur-[140px]" />
-        <div className="absolute -bottom-40 right-1/4 h-[420px] w-[420px] rounded-full bg-brand-red/20 blur-[160px]" />
-
-        {/* Cinematic vignette */}
-        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_50%,rgba(8,12,25,0.45)_100%)]" />
-
-        {/* Subtle film grain for texture */}
+        {/* Subtle film grain. */}
         <div
-          className="absolute inset-0 opacity-[0.12] mix-blend-overlay pointer-events-none"
+          className="absolute inset-0 opacity-[0.10] mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")",
           }}
         />
-
-        {/* Accent flare lines — vertical hairlines */}
-        <div className="absolute top-0 left-[8%] h-full w-px bg-gradient-to-b from-transparent via-brand-red/30 to-transparent" />
-        <div className="absolute top-0 right-[8%] h-full w-px bg-gradient-to-b from-transparent via-brand-gold/30 to-transparent" />
       </div>
 
       {/* Floating drips */}
