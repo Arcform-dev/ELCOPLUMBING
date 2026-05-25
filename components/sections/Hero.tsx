@@ -11,75 +11,54 @@ export default function Hero() {
       id="top"
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-brand-navy pt-32 pb-20 md:pt-40 lg:pt-32"
     >
-      {/* Background image — cinematic gray-mask treatment */}
+      {/* Background image — van visible, gray mask + dark gradient for text legibility */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* Base photo, slightly desaturated for that grayscale film look */}
+        {/* Base photo — slightly desaturated, anchored right so the van shows behind the form */}
         <div className="absolute inset-0">
           <Image
             src="/images/van.png"
-            alt="ELCO Plumbing service van parked in Marietta"
+            alt="ELCO Plumbing service van parked in a Marietta driveway"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[70%_center]"
             style={{
-              filter: "grayscale(78%) contrast(1.08) brightness(0.78)",
+              filter: "grayscale(35%) contrast(1.08) brightness(0.9) saturate(0.85)",
             }}
           />
         </div>
 
-        {/* Gray duotone wash */}
-        <div className="absolute inset-0 bg-[#2a3142] mix-blend-color opacity-80" />
+        {/* Subtle gray tint to unify the colors with the brand palette */}
+        <div className="absolute inset-0 bg-[#1B2A4A] mix-blend-multiply opacity-25" />
 
-        {/* Left-to-right legibility gradient for headline area */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/60 to-brand-navy/30" />
+        {/* Strong left-side legibility gradient — fades out around the form area */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 from-0% via-30% to-transparent to-70%" />
 
-        {/* Top-to-bottom finishing gradient (keeps the nav legible up top) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/70 via-transparent to-brand-navy/80" />
+        {/* Top edge gradient — keeps the nav readable without darkening the whole image */}
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-brand-navy/85 to-transparent" />
 
-        {/* Brand-color light leaks */}
-        <div className="absolute -top-32 -left-32 h-[560px] w-[560px] rounded-full bg-brand-gold/20 blur-[140px]" />
-        <div className="absolute -bottom-40 -right-32 h-[600px] w-[600px] rounded-full bg-brand-red/25 blur-[160px]" />
-        <div className="absolute top-1/2 left-1/3 h-[300px] w-[300px] -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+        {/* Bottom edge gradient — feeds into the ticker bar below */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-navy/85 to-transparent" />
+
+        {/* Brand-color light leaks — placed away from the van for atmosphere */}
+        <div className="absolute -top-32 -left-32 h-[420px] w-[420px] rounded-full bg-brand-gold/15 blur-[140px]" />
+        <div className="absolute -bottom-40 right-1/4 h-[420px] w-[420px] rounded-full bg-brand-red/20 blur-[160px]" />
 
         {/* Cinematic vignette */}
-        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,rgba(8,12,25,0.55)_100%)]" />
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_50%,rgba(8,12,25,0.45)_100%)]" />
 
-        {/* Blueprint grid */}
+        {/* Subtle film grain for texture */}
         <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(245,197,24,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(245,197,24,0.6) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-            maskImage:
-              "radial-gradient(ellipse at center, black 30%, transparent 75%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 30%, transparent 75%)",
-          }}
-        />
-
-        {/* Horizontal scan lines for editorial texture */}
-        <div
-          className="absolute inset-0 opacity-[0.05] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 4px)",
-          }}
-        />
-
-        {/* Film grain */}
-        <div
-          className="absolute inset-0 opacity-[0.18] mix-blend-overlay pointer-events-none"
+          className="absolute inset-0 opacity-[0.12] mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")",
           }}
         />
 
-        {/* Accent flare line — pure ELCO red */}
+        {/* Accent flare lines — vertical hairlines */}
         <div className="absolute top-0 left-[8%] h-full w-px bg-gradient-to-b from-transparent via-brand-red/30 to-transparent" />
-        <div className="absolute top-0 right-[14%] h-full w-px bg-gradient-to-b from-transparent via-brand-gold/25 to-transparent" />
+        <div className="absolute top-0 right-[8%] h-full w-px bg-gradient-to-b from-transparent via-brand-gold/30 to-transparent" />
       </div>
 
       {/* Floating drips */}
