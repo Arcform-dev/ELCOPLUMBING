@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Star, Phone, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import QuoteForm from "../QuoteForm";
 
+
 export default function Hero() {
   return (
     <section
