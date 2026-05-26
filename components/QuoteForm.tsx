@@ -74,7 +74,7 @@ export default function QuoteForm({ variant = "hero" }: { variant?: Variant }) {
       onSubmit={onSubmit}
       className={`relative grid gap-4 ${
         isHero
-          ? "rounded-[28px] bg-white/25 p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/30 backdrop-blur-[28px] backdrop-saturate-150 md:p-8"
+          ? "rounded-[28px] bg-white/8 p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] ring-1 ring-white/25 backdrop-blur-[6px] md:p-8"
           : "rounded-[32px] bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-md md:p-10"
       }`}
     >
@@ -210,7 +210,7 @@ function Field({
         {...props}
         className={`w-full rounded-xl border px-4 py-3 text-sm font-medium transition-colors ${
           isHero
-            ? "border-brand-navy/30 bg-white/35 text-brand-navy placeholder:text-brand-navy/50 focus:border-brand-red focus:bg-white/80"
+            ? "border-white/30 bg-white/20 text-brand-navy placeholder:text-brand-navy/60 focus:border-brand-red focus:bg-white/55"
             : "border-white/15 bg-white/5 text-white placeholder:text-white/30 focus:border-brand-gold focus:bg-white/10"
         }`}
       />
@@ -246,7 +246,7 @@ function SelectField({
         defaultValue=""
         className={`w-full rounded-xl border px-4 py-3 text-sm font-medium transition-colors ${
           isHero
-            ? "border-brand-navy/30 bg-white/35 text-brand-navy focus:border-brand-red focus:bg-white/80"
+            ? "border-white/30 bg-white/20 text-brand-navy focus:border-brand-red focus:bg-white/55"
             : "border-white/15 bg-white/5 text-white focus:border-brand-gold focus:bg-white/10"
         }`}
       >
